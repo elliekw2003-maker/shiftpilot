@@ -1,0 +1,15 @@
+version: '3.9'
+services:
+  db:
+    image: postgres:15
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: shiftpilot
+      POSTGRES_PASSWORD: shiftpilot
+      POSTGRES_DB: shiftpilot
+    ports:
+      - '5432:5432'
+    volumes:
+      - db_data:/var/lib/postgresql/data
+volumes:
+  db_data:
